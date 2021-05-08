@@ -34,9 +34,17 @@ function Clear() {
 }
 
 function Copy() {
-  navigator.clipboard.writeText(output);
+  // navigator.clipboard.writeText(output);
   // output.select();
   // document.execCommand("copy");
+
+  var text = output;
+  var elem = document.createElement("textarea");
+  document.body.appendChild(elem);
+  elem.value = text;
+  elem.select();
+  document.execCommand("copy");
+  document.body.removeChild(elem);
   alert("Copied text");
 }
 
