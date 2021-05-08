@@ -34,7 +34,9 @@ function Clear() {
 }
 
 function Copy() {
-  navigator.clipboard.writeText(outputText.innerHTML);
+  // navigator.clipboard.writeText(outputText.innerHTML);
+  output.select();
+  document.execCommand("copy");
   alert("Copied text");
 }
 
