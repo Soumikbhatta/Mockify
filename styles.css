@@ -18,8 +18,7 @@
 }
 
 .output {
-  display: flex;
-  gap: 3%;
+  padding: 5%;
 }
 
 .input {

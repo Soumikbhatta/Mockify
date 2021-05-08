@@ -1,5 +1,6 @@
 var inputText = document.getElementById("in");
 var outputText = document.getElementById("out");
+var output = outputText.innerHTML;
 
 function mocker(txt) {
   const arr = txt.toLowerCase().split("");
@@ -14,33 +15,26 @@ function mocker(txt) {
   return out.join("");
 }
 
-
-function mockButton(){
-    const input = inputText.value;
-    outputText.value = mocker(input);
-    pauseButton.style.display = "inline-block";
+function mockButton() {
+  const input = inputText.value;
+  output = mocker(input);
+  outputText.innerHTML = output;
+  copyButton.style.display = "inline-block";
 }
 
-
-
-function Clear(){
-    inputText.value = "";
-    outputText.value = "";
-    pauseButton.style.display = "none";
-
+function Clear() {
+  inputText.value = "";
+  outputText.value = "";
+  copyButton.style.display = "none";
 }
 
-function Copy(){
-    outputText.select();
-    document.execCommand("copy");
-    alert("Copied text");
+function Copy() {
+  navigator.clipboard.writeText(outputText.innerHTML);
+  alert("Copied text");
 }
 
-let pauseButton = document.getElementById("pause")
-pauseButton.style.display = "none";
-
-
-
+let copyButton = document.getElementById("copy");
+copyButton.style.display = "none";
 
 // input.onkeyup = function (e) {
 //       const input = e.target.value;
