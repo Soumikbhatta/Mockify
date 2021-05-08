@@ -14,7 +14,6 @@ function mocker(txt) {
         return x.toUpperCase();
       }
     });
-
     return out.join("");
   }
 }
