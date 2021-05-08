@@ -18,6 +18,7 @@ function mocker(txt) {
 function mockButton(){
     const input = inputText.value;
     outputText.value = mocker(input);
+    pauseButton.style.display = "inline-block";
 }
 
 
@@ -25,6 +26,7 @@ function mockButton(){
 function Clear(){
     inputText.value = "";
     outputText.value = "";
+    pauseButton.style.display = "none";
 
 }
 
@@ -33,6 +35,9 @@ function Copy(){
     document.execCommand("copy");
     alert("Copied text");
 }
+
+let pauseButton = document.getElementById("pause")
+pauseButton.style.display = "none";
 
 
 
