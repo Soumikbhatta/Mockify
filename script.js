@@ -4,22 +4,28 @@ var output = outputText.innerHTML;
 
 function mocker(txt) {
   const arr = txt.toLowerCase().split("");
-  const out = arr.map(function (x, i) {
-    if (i % 2 === 0) {
-      return x;
-    } else {
-      return x.toUpperCase();
-    }
-  });
+  if (txt.trim() === "") {
+    return;
+  } else {
+    const out = arr.map(function (x, i) {
+      if (i % 2 === 0) {
+        return x;
+      } else {
+        return x.toUpperCase();
+      }
+    });
 
-  return out.join("");
+    return out.join("");
+  }
 }
 
 function mockButton() {
   const input = inputText.value;
   output = mocker(input);
-  outputText.innerHTML = output;
-  copyButton.style.display = "inline-block";
+  if (output) {
+    outputText.innerHTML = output;
+    copyButton.style.display = "inline-block";
+  }
 }
 
 function Clear() {
