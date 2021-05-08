@@ -46,6 +46,7 @@ textarea {
 .buttons {
   display: flex;
   width: 50%;
+  gap: 5%;
   max-width: 250px;
-  justify-content: space-between;
+  justify-content: center;
 }
